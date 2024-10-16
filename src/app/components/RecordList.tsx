@@ -35,7 +35,7 @@ const RecordList: React.FC<RecordListProps> = ({ changes, setChanges }) => {
       const data = await getRecords();
       setRecords(data);
     } catch (error) {
-      console.log("Erro ao carregar os dados");
+      console.log("Erro ao carregar os dados --> ", error);
     }
   };
 
