@@ -37,7 +37,7 @@ const FinancialSummary = ({ changes }: { changes: number }) => {
       setTotalBalance(balance.totalBalance);
       setLoading(false);
     } catch (error) {
-      console.log("Erro ao carregar valores");
+      console.log("Erro ao carregar valores --> ", error);
     }
   };
 

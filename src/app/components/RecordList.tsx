@@ -48,7 +48,7 @@ const RecordList: React.FC<RecordListProps> = ({ changes, setChanges }) => {
       setOpen(false);
     } catch (error) {
       setConfirmLoading(false);
-      console.log("Erro ao deletar");
+      console.log("Erro ao deletar --> ", error);
     } finally {
       setConfirmLoading(false);
     }

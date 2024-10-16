@@ -53,6 +53,7 @@ const RecordFormModal: React.FC<RecordFormModalProps> = ({
         message: "Erro",
         description: "Ocorreu um erro ao criar o registro.",
       });
+      console.log("Error --> ", error);
       setDisable(false);
     } finally {
       setDisable(false);
