@@ -1,0 +1,24 @@
+/* Header.module.scss */
+.header {
+  display: flex;
+  justify-content: center;
+  background-color: #30107d;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+}
+
+.open-modal {
+  color: white;
+  background-color: #401a9b;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}

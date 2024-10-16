@@ -35,7 +35,7 @@ export const getTotalEntries = async (): Promise<{ totalEntries: number }> => {
 };
 
 export const getTotalExits = async (): Promise<{ totalExits: number }> => {
-  const response = await fetch("/api/v1/record/exits");
+  const response = await fetch(url + "/api/v1/record/exits");
   if (!response.ok) {
     throw new Error("Failed to fetch total exits");
   }
@@ -43,7 +43,7 @@ export const getTotalExits = async (): Promise<{ totalExits: number }> => {
 };
 
 export const getTotalBalance = async (): Promise<{ totalBalance: number }> => {
-  const response = await fetch("/api/record/total");
+  const response = await fetch(url + "/api/v1/record/total");
   if (!response.ok) {
     throw new Error("Failed to fetch total balance");
   }

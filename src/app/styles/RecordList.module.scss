@@ -1,0 +1,76 @@
+.container-titles {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.titles {
+  display: flex;
+  width: 70%;
+  display: flex;
+}
+
+.title {
+  font-weight: normal;
+  font-size: 16px;
+  color: #b9b9b9;
+}
+
+.title:nth-child(1) {
+  width: 32%;
+}
+
+.title:nth-child(2) {
+  width: 18%;
+}
+
+.title:nth-child(3) {
+  width: 20%;
+}
+
+.list-skeleton {
+  width: 70%;
+}
+
+.container-records {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+  margin-top: 18px;
+}
+
+.records {
+  display: flex;
+  background-color: white;
+  align-items: center;
+  width: 70%;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.record {
+  font-size: 16px;
+}
+
+.record:nth-child(1) {
+  width: 31.3%;
+}
+
+.record:nth-child(2) {
+  width: 19.2%;
+}
+
+.record:nth-child(3) {
+  width: 20.4%;
+}
+
+.record:nth-child(4) {
+  width: 26.5%;
+}
+
+.delete {
+  border: none;
+  cursor: pointer;
+}
