@@ -74,3 +74,49 @@
   border: none;
   cursor: pointer;
 }
+
+.mobile-list-containers {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .container-titles {
+    display: none;
+  }
+
+  .container-records {
+    display: none;
+  }
+
+  .mobile-list-containers {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .records-mobile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 92%;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .title {
+    margin-top: 14px;
+  }
+
+  .record {
+    margin-top: 5px;
+  }
+
+  .delete {
+    position: absolute;
+    right: 5%;
+  }
+}

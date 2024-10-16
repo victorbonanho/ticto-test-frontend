@@ -64,9 +64,9 @@ const FinancialSummary = ({ changes }: { changes: number }) => {
         </div>
         <div className={styles["amount-container"]}>
           <div className={styles["amount-item"]}>
-            <h2 className={styles.title}>Saldo Total</h2>
+            <h2 className={styles["last-title"]}>Saldo Total</h2>
           </div>
-          <span className={styles.balance}>
+          <span className={styles["last-balance"]}>
             {loading ? <Skeleton height={30} /> : formatCurrency(totalBalance)}
           </span>
         </div>

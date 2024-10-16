@@ -8,6 +8,7 @@
   display: flex;
   width: 70%;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .amount-container {
@@ -20,9 +21,19 @@
   width: 32%;
 }
 
+.amount-container:nth-child(3) {
+  background-color: #06d6a2;
+}
+
 .title {
   font-size: 20px;
   font-weight: normal;
+}
+
+.last-title {
+  font-size: 20px;
+  font-weight: normal;
+  color: white;
 }
 
 .amount-item {
@@ -34,4 +45,31 @@
 .balance {
   font-size: 2.5vw;
   margin-top: 30px;
+}
+
+.last-balance {
+  font-size: 2.5vw;
+  margin-top: 30px;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .amount-containers {
+    width: 92%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .amount-container {
+    width: 100%;
+  }
+
+  .balance {
+    font-size: 4.5vw;
+  }
+
+  .last-balance {
+    font-size: 4.5vw;
+  }
 }

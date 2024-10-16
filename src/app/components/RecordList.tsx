@@ -81,14 +81,16 @@ const RecordList: React.FC<RecordListProps> = ({ changes, setChanges }) => {
 
   return (
     <div>
-      <div className={styles["container-titles"]}>
-        <div className={styles["titles"]}>
-          <h4 className={styles["title"]}>Descrição</h4>
-          <h4 className={styles["title"]}>Valor</h4>
-          <h4 className={styles["title"]}>Categoria</h4>
-          <h4 className={styles["title"]}>Data</h4>
+      {records.length !== 0 && (
+        <div className={styles["container-titles"]}>
+          <div className={styles["titles"]}>
+            <h4 className={styles["title"]}>Descrição</h4>
+            <h4 className={styles["title"]}>Valor</h4>
+            <h4 className={styles["title"]}>Categoria</h4>
+            <h4 className={styles["title"]}>Data</h4>
+          </div>
         </div>
-      </div>
+      )}
       <div className={styles["container-records"]}>
         {records.length === 0 && (
           <div className={styles["list-skeleton"]}>
@@ -98,8 +100,53 @@ const RecordList: React.FC<RecordListProps> = ({ changes, setChanges }) => {
         {records.map((record) => (
           <div key={record._id} className={styles["records"]}>
             <p className={styles["record"]}>{record.name}</p>
-            <p className={styles["record"]}>{formatCurrency(record.amount)}</p>
+            <p
+              className={styles["record"]}
+              style={
+                record.type === "saída"
+                  ? { color: "#DB3766" }
+                  : { color: "#06D7A5" }
+              }
+            >
+              {formatCurrency(record.amount)}
+            </p>
             <p className={styles["record"]}>{record.category}</p>
+            <p className={styles["record"]}>{formatDate(record.date)}</p>
+            <button
+              onClick={() => {
+                if (record._id) {
+                  showModal(record._id);
+                } else {
+                  console.error("ID do registro não encontrado");
+                }
+              }}
+              className={styles["delete"]}
+            >
+              <Image src={Trash} alt="Remover" width={15} />
+            </button>
+          </div>
+        ))}
+      </div>
+      {/* Mobile */}
+      <div className={styles["mobile-list-containers"]}>
+        {records.map((record) => (
+          <div key={record._id} className={styles["records-mobile"]}>
+            <h4 className={styles["title"]}>Descrição</h4>
+            <p className={styles["record"]}>{record.name}</p>
+            <h4 className={styles["title"]}>Valor</h4>
+            <p
+              className={styles["record"]}
+              style={
+                record.type === "saída"
+                  ? { color: "#DB3766" }
+                  : { color: "#06D7A5" }
+              }
+            >
+              {formatCurrency(record.amount)}
+            </p>
+            <h4 className={styles["title"]}>Categoria</h4>
+            <p className={styles["record"]}>{record.category}</p>
+            <h4 className={styles["title"]}>Data</h4>
             <p className={styles["record"]}>{formatDate(record.date)}</p>
             <button
               onClick={() => {
